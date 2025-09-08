@@ -21,7 +21,7 @@ Your users should be able to:
 - See hover and focus states for all interactive elements on the page
 - **Bonus**: Use the local JSON data to dynamically populate the content
 
-Want some support on the challenge? [Send email](alireza.paziresh@aisa.solutions) and ask your questions.
+Want some support on the challenge? [Send email to alireza.paziresh@aisa.solutions](alireza.paziresh@aisa.solutions) and ask your questions.
 ## Where to find everything
 
 Your task is to build out the project to the designs inside the `/design` folder. 
