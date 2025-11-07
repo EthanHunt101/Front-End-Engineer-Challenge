@@ -7,38 +7,69 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>AISA Solutions Front-End Engineer Intern | Results summary component Challenge</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  Your Result
-  76
-  of 100
+  <div class = "main-area">
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
+    <div class = "my-results grid-flow" data-spacing = "large">
+      <h1 class = "section-title">
+        Your Result
+      </h1>
 
-  Reaction
-  80 / 100
+      <p class = "total-score">
+        <span>
+          76
+        </span> of 100
+      </p>
 
-  Memory
-  92 / 100
+      <div class = "grid-flow">
+        <p class = "results-keyword">
+          Great
+        </p>
+        <p>
+          You scored higher than 65% of the people who have taken these tests.
+        </p>
+      </div>
+    </div>
 
-  Verbal
-  61 / 100
+    <div class = "my-summary grid-flow" data-spacing = "large">
+      <h1 class= "section-title">
+        Summary
+      </h1>
+      <div class = "grid-flow" id = "summary-fill">
 
-  Visual
-  72 / 100
+      </div>
+      
 
-  <button>Continue</button>
+    <button>Continue</button>
+    </div>
+    
+  </div>
+    <script>
+    fetch("data.json")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("summary-fill");
+        let total = 0;
 
+        data.forEach(item => {
+          container.innerHTML += `
+            <div class = "item" data-name = "${item.category.toLowerCase()}">
+              <div class = "flex-group">
+                <img src = "${item.icon}" alt = "${item.category}">
+                <p class = "title">${item.category}</p>
+              </div>
+              <p class = "score"><span>${item.score}</span> / 100</p>
+            </div>
+          `;
+          total += item.score;
+        });
 
+        document.getElementById("total-score").textContent = Math.round(total / data.length);
+      })
+      .catch(err => console.error("Error:", err));
+  </script>
 </body>
 </html>
