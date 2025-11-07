@@ -13,8 +13,6 @@ Thank you to the AISA Solotion developers for allowing me the chance to show off
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -27,7 +25,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](assets\images\finished-challenge-ss.png)
+![Completed Challenge Screenshot](./assets/images/finished-challenge-ss.png)
 
 Here is a screenshot of my completed challenge from a desktop view.
 
